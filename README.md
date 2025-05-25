@@ -2,7 +2,12 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
-First, run the development server:
+First add the file .env in the root of the project.
+
+With the key:
+NEXT_PUBLIC_TMDB_API_KEY=here goes your TMDB key
+
+Then, run the development server:
 
 ```bash
 yarn dev
