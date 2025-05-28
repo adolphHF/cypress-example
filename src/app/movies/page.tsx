@@ -90,8 +90,11 @@ export default function HomePage() {
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && handleSearch()}
+              data-testid="search-input"
             />
-            <Button onClick={handleSearch}>Buscar</Button>
+            <Button onClick={handleSearch} data-testid="search-button">
+              Buscar
+            </Button>
             {searching && (
               <Button variant="ghost" onClick={clearSearch}>
                 Limpiar
@@ -113,7 +116,10 @@ export default function HomePage() {
           ) : searchResults.length === 0 ? (
             <p>No se encontraron resultados.</p>
           ) : (
-            <div className="flex gap-4 overflow-x-auto no-scrollbar pb-4">
+            <div
+              className="flex gap-4 overflow-x-auto no-scrollbar pb-4"
+              data-testid="search-results"
+            >
               {searchResults.slice(0, 14).map((movie) => (
                 <MovieCard
                   key={movie.id}
@@ -148,12 +154,17 @@ export default function HomePage() {
             >
               <TabsList>
                 <TabsTrigger value="day">Hoy</TabsTrigger>
-                <TabsTrigger value="week">Esta Semana</TabsTrigger>
+                <TabsTrigger value="week" data-testid="change-to-week-tab">
+                  Esta Semana
+                </TabsTrigger>
               </TabsList>
             </Tabs>
           </div>
 
-          <div className="flex gap-4 overflow-x-auto no-scrollbar pb-4">
+          <div
+            className="flex gap-4 overflow-x-auto no-scrollbar pb-4"
+            data-testid="trending-movies"
+          >
             {loading ? (
               <p>Cargando películas...</p>
             ) : movies.length === 0 ? (
