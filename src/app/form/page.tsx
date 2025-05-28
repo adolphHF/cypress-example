@@ -64,25 +64,42 @@ export default function MovieFormPage() {
               name="title"
               id="title"
               placeholder="Título de la película"
+              data-testid="input-movie-title"
             />
           </div>
 
           <div>
             <Label htmlFor="release">Fecha de estreno</Label>
-            <Input name="release" id="release" type="date" />
+            <Input
+              name="release"
+              id="release"
+              type="date"
+              data-testid="input-movie-release-date"
+            />
           </div>
 
           <div>
             <Label htmlFor="genre">Género</Label>
             <Select value={genreValue} onValueChange={setGenreValue}>
-              <SelectTrigger id="genre">
+              <SelectTrigger id="genre" data-testid="genre-select">
                 <SelectValue placeholder="Selecciona un género" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="accion">Acción</SelectItem>
-                <SelectItem value="comedia">Comedia</SelectItem>
-                <SelectItem value="drama">Drama</SelectItem>
-                <SelectItem value="ciencia-ficcion">Ciencia ficción</SelectItem>
+                <SelectItem value="accion" data-testid="genre-option-accion">
+                  Acción
+                </SelectItem>
+                <SelectItem value="comedia" data-testid="genre-option-comedia">
+                  Comedia
+                </SelectItem>
+                <SelectItem value="drama" data-testid="genre-option-drama">
+                  Drama
+                </SelectItem>
+                <SelectItem
+                  value="ciencia-ficcion"
+                  data-testid="genre-option-ciencia"
+                >
+                  Ciencia ficción
+                </SelectItem>
               </SelectContent>
             </Select>
           </div>
@@ -93,6 +110,7 @@ export default function MovieFormPage() {
               name="overview"
               id="overview"
               placeholder="Resumen de la película..."
+              data-testid="input-movie-overview"
             />
           </div>
 
